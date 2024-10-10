@@ -66,7 +66,9 @@
 - Попытка обучить нейронную сеть вообще на всех данных (без деления на тренировочные и тестовые) - часто случалось, что скор вырастал;
 - Улучшить генерируемость данных, тестировать больше моделей (кроме GPT, Claude), например, llama.
 
-P.S.: если вдруг будет интересно, что за данне мне сгенерировала GPT-модель, то прикладываю в репозиторий файл `gpt4o_additional_data.csv`.
+P.S.: если вдруг будет интересно, что за данне мне сгенерировала GPT-модель, то прикладываю в репозиторий файлы: 
+- [`gpt4o_additional_data.csv`](https://github.com/metanovus/ecom-tech-nlp-comp/blob/master/gpt4o_additional_data.csv) (один класс);
+- [`gpt4o_additional_data_multiclass.csv`](https://github.com/metanovus/ecom-tech-nlp-comp/blob/master/gpt4o_additional_data_multiclass.csv) (несколько классов - столбец `class`).
 
 ---
 
