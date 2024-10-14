@@ -4,8 +4,8 @@
 
 ## Обзор репозитория
 
-1. **`Samoilov_Vadim_ecom_tech_NLP_Learning.ipybn`**: Инициализация и обработка данных, получения готовых весов модели.
-2. **`Samoilov_Vadim_ecom_tech_NLP_Prediction.ipybn`**: Составление прогнозов через подгрузку весов модели.
+1. [**`Samoilov_Vadim_ecom_tech_NLP_Learning.ipybn`**](https://github.com/metanovus/ecom-tech-nlp-comp/blob/master/Samoilov_Vadim_ecom_tech_NLP_Learning.ipynb): Инициализация и обработка данных, получения готовых весов модели.
+2. [**`Samoilov_Vadim_ecom_tech_NLP_Prediction.ipybn`**](https://github.com/metanovus/ecom-tech-nlp-comp/blob/master/Samoilov_Vadim_ecom_tech_NLP_Prediction.ipynb): Составление прогнозов через подгрузку весов модели.
 
 - 🔗 [Скачать веса предобученой модели](https://drive.google.com/file/d/1FBfKdnTpTEdcioNvNZ43ky2mkWhF-M3N/view?usp=drive_link)
 - 🔗 [Скачать Docker-образ Streamlit](https://drive.google.com/file/d/1LUDDnpkZhBJv7KpZqaH3QioIYL2VXV3o/view?usp=sharing) (установлены уже все библиотеки)
