@@ -1,4 +1,4 @@
-# 💫 ecom.tech x Deep Learning Scool Competition + Streamlit
+## 💫 ecom.tech x Deep Learning Scool Competition + Streamlit
 
 Этот репозиторий содержит ноутбуки участия в [соревновании по NLP](https://ods.ai/competitions/dls_ecomtech/leaderboard/private). В репозитории два ноутбука и файл requirements.txt для отслеживания зависимостей.
 
