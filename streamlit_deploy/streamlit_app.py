@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import torch
+import os
 from transformers import RobertaTokenizer, RobertaForSequenceClassification
 
 
@@ -10,7 +11,11 @@ device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 
 # Загрузка токенизатора и описаний классов
 tokenizer = RobertaTokenizer.from_pretrained(model_name)
-class_descriptions = pd.read_csv('https://raw.githubusercontent.com/metanovus/ecom-tech-nlp-comp/blob/master/streamlit_deploy/files/trends_description.csv')
+
+# Получаем абсолютный путь к файлу
+current_dir = os.path.dirname(os.path.abspath(__file__))
+file_path = os.path.join(current_dir, 'files', 'trends_description.csv')
+class_descriptions = pd.read_csv(file_path)
 
 # Определение класса модели
 class BERTClass(torch.nn.Module):
