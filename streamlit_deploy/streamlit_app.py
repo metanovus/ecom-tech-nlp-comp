@@ -39,34 +39,34 @@ model.eval()
 def get_embeddings(text):
     inputs = tokenizer.encode_plus(
         text,
+        None,
         add_special_tokens=True,
         max_length=128,
         padding='max_length',
+        return_token_type_ids=True,
         truncation=True,
         return_attention_mask=True,
         return_tensors='pt'
     )
-    return {
-        'input_ids': inputs['input_ids'].squeeze(0),
-        'attention_mask': inputs['attention_mask'].squeeze(0),
+    item = {
+        'input_ids': inputs['input_ids'].flatten(),
+        'attention_mask': inputs['attention_mask'].flatten(),
+        'token_type_ids': inputs['token_type_ids'].flatten(),
         'text': text
     }
+    return item
 
 def get_new_predictions(model, text):
     data = get_embeddings(text)
-    
-    ids = data['input_ids'].to(device, dtype=torch.long)
-    mask = data['attention_mask'].to(device, dtype=torch.long)
-    
+    ids = data['input_ids'].unsqueeze(0).to(device, dtype=torch.long)
+    mask = data['attention_mask'].unsqueeze(0).to(device, dtype=torch.long)
+    token_type_ids = data['token_type_ids'].unsqueeze(0).to(device, dtype=torch.long)
+
     with torch.no_grad():
-        outputs = model(input_ids=ids.unsqueeze(0), attention_mask=mask.unsqueeze(0))
-        logits = outputs.logits
-        
-        prediction_probs = torch.sigmoid(logits).cpu().numpy().flatten()
-        
+        outputs = model(ids, mask, token_type_ids).logits
+        prediction_probs = torch.sigmoid(outputs).cpu().numpy().flatten()
         predictions = prediction_probs >= 0.45
-    
-    # Возвращаем предсказания и вероятности
+
     return predictions, prediction_probs
 
 # Streamlit интерфейс
