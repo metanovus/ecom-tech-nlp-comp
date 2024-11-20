@@ -10,7 +10,7 @@ device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cp
 
 # Загрузка токенизатора и описаний классов
 tokenizer = RobertaTokenizer.from_pretrained(model_name)
-class_descriptions = pd.read_csv('files/trends_description.csv')
+class_descriptions = pd.read_csv('https://raw.githubusercontent.com/metanovus/ecom-tech-nlp-comp/blob/master/streamlit_deploy/files/trends_description.csv')
 
 # Определение класса модели
 class BERTClass(torch.nn.Module):
