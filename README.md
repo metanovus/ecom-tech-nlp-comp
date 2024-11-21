@@ -18,7 +18,7 @@
 Необходимо выполнить следующие команды:
   ```bash
   git clone https://github.com/metanovus/ecom-tech-nlp-comp.git
-  cd ecom-tech-nlp-comp
+  cd ecom-tech-nlp-comp/streamlit_deploy
   pip install requirements.txt
   streamlit streamlit_app.py
   ```
